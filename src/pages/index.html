@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math quiz</title>
+</head>
+<body>
+    <section class="main">
+        <div class="main__container">
+            <h1 data-text="Hello Gamer!" class="main__greetings">Hello Gamer!</h1>
+            <h3 class="main__question">Tell us your name?</h3>
+            <div class="input-box">
+                <input type="text" id="gamer_name" class="main__name-inp" required="required">
+                <span>Enter name</span>
+            </div>
+            <h3 class="main__question">Choose your game mode:</h3>
+            <div class="main__mode-box">
+                <input type="radio" value="practice" name="mode" id="practice" checked/>
+                <label for="practice" class="main__mode-btn">Practice</label>
+                <input type="radio" value="time-attack" name="mode" id="time-attack"/>
+                <label for="time-attack" class="main__mode-btn">Time Attack</label>
+            </div>
+            <button class="start-btn" id="start-btn">Let's go</button>
+            <div class="pages">
+                <a href="#">don’t know rules? clicke here!</a>
+                <a href="#">LEADERBOARD</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

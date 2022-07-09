@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math quiz</title>
+</head>
+<body>
+    <section class="mode-game">
+        <div class="mode-game__header">
+            <div class="mode-game__info">
+                <h2 class="mode-game__user-name">Good luck, <span id="user-name"></span></h2>
+                <!-- <h2 class="mode-game__level">level  1</h2> -->
+            </div>
+            <button id="game-over__btn" class="mode-game__btn">
+                stop game
+            </button>
+        </div>
+        <!-- <h2 class="mode-game__level mobile">level  1</h2> -->
+        <div class="mode-game__time time">
+            <div class="mode-game__box">
+                <div id="progress">
+                    <div id="progress-bar"></div>
+                  </div>
+                  <div>
+                    <p id="time-demo" class="mode-game__timer">00:00</p>
+                  </div>
+            </div>
+        </div>
+        <main class="mode-game__question-place">
+            <div class="num-1">2</div>
+            <div class="operator">+</div>
+            <div class="num-2">4</div>
+            <div class="equal">=</div>
+            <input type="number" class="result">
+        </main>
+        <div class="mode-game__scores center">
+            <h3 class="mode-game__score">Score:</h3>
+            <h3 class="win">0</h3>
+            <p class="plus">+1</p>
+            <p class="minus">-1</p>
+        </div>
+    </section>
+    <div class="modal">
+        <div class="modal-content">
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -9,10 +9,10 @@
 <body>
     <section class="main">
         <div class="main__container">
-            <h1 data-text="Hello Gamer!" class="main__greetings">Hello Gamer!</h1>
+            <h1 class="main__greetings" contenteditable="true">Hello Gamer!</h1>
             <h3 class="main__question">Tell us your name?</h3>
             <div class="input-box">
-                <input type="text" id="gamer_name" class="main__name-inp" required="required">
+                <input type="text" id="gamer_name" class="main__name-inp" required>
                 <span>Enter name</span>
             </div>
             <h3 class="main__question">Choose your game mode:</h3>
@@ -22,12 +22,33 @@
                 <input type="radio" value="time-attack" name="mode" id="time-attack"/>
                 <label for="time-attack" class="main__mode-btn">Time Attack</label>
             </div>
-            <button class="start-btn" id="start-btn">Let's go</button>
+            <button class="start-btn" id="start-btn" >Let's go</button>
             <div class="pages">
-                <a href="#">don’t know rules? clicke here!</a>
-                <a href="#">LEADERBOARD</a>
+                <a role="button" id="open-modal">don’t know rules? clicke here!</a>
+                <a href="leaderboard.html">LEADERBOARD</a>
             </div>
         </div>
     </section>
+    <div class="modal-page">
+        <div class="modal-page__content">
+            <img src="../assets/icons/close.svg" alt="close" class="modal-page__close">
+            <h2 class="rules__title">Rules of the game</h2>
+            <ul class="rules__list">
+                <li>Enter your name, select Practice or Attack mode and click Let`s go.</li>
+                <li>Attack - you have time (1:30 min) during this time you must answer as many questions correctly as possible
+                    tasks. After the end of the time, your total is saved in the Leaderboard.</li>
+                <li>Practic - you don't have time and you train by answering the tasks correctly. You can then click Stop
+                    game and your total will be saved in the Leaderboard.</li>
+                <!-- <li>Omaha Hi - Just as it sounds, in this version, the highest five card hand takes the pot</li> -->
+                <!-- <li>Pot Limit - In this popular variation, the maximum amount that can be bet is the total sum of the chips in the pot.</li>
+                <li>Each player is dealt four cards face down, as opposed to the two cards that are dealt in Texas Hold'em. That is the first variation.</li>
+                <li>Five community cards are then dealt.</li>
+                <li>No Limit - In this aggressive version , players can bet or raise as much as they desire and at any point during the betting.</li>
+                <li>Omaha Hi - Just as it sounds, in this version, the highest five card hand takes the pot</li>
+                <li>Pot Limit - In this popular variation, the maximum amount that can be bet is the total sum of the chips in the pot.</li> -->
+            </ul>
+        </div>
+        </div>
+    </div>
 </body>
 </html>

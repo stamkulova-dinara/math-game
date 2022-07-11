@@ -26,16 +26,19 @@ a {
     font-weight: 400;
 }
 
-.back-to__link {
+/* .back-to__link {
     color: white;
-}
+} */
 
-.back-to__link svg {
-    padding-top: 10px;
-}
+.back-page {
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
 
-.animation {
-    animation: show .5s ease-in-out;
+}
+.arrow {
+  width: 50px;
 }
 
 @keyframes slideIn {
@@ -60,18 +63,7 @@ a {
     animation: twitch 0.4s ease-in-out forwards;  
 }
 
-/* @keyframes twitch {
-    1% {transform: rotate(10deg);}
-    3%{transform: rotate(-10deg);}
-    5% {transform: rotate(10deg);}
-    7%{transform: rotate(-10deg);}
-    9% {transform: rotate(10deg);}
-    11% {transform: rotate(-10deg);}
-    13% {transform: rotate(0deg);}
-    11% {transform: rotate(0deg);}
-  } */
-
-  /* @keyframes hide {
+  @keyframes hide {
     from {
       opacity: 0.2;
       left: 100%;
@@ -93,7 +85,7 @@ a {
       opacity: 1;
       left: -130%;
     }
-  }*/
+  }
 
   @keyframes twitch {
     0% { transform: translate(1px, 1px) rotate(0deg); }

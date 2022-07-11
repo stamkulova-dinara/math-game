@@ -1,6 +1,7 @@
-let select = document.querySelector('#modes'),
-      leaderBoardTable = document.querySelector('.leaderboard-table'),
-      options = document.querySelectorAll('.options')
+let select = document.querySelector('#modes')
+const leaderBoardTable = document.querySelector('.leaderboard-table')
+const options = document.querySelectorAll('.options')
+const backBtn = document.querySelector('.history-page')
 
 export function leaderBoard () {
     const leaderBoards = JSON.parse(localStorage.getItem("gamer"));
@@ -9,6 +10,7 @@ export function leaderBoard () {
     options?.forEach(el => { 
         if (currentUser.mode === el.value) el.setAttribute('selected', 'true')
     })
+    backBtn?.addEventListener('click', () => window.history.back())
     const leader = () => {
         const value = select?.options[select.selectedIndex].value;
         let data = leaderBoards?.filter(info => info.mode === value)

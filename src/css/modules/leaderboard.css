@@ -1,5 +1,6 @@
 .leaderboard-page {
-    padding: 70px 15px;
+    /* padding: 70px 15px; */
+    padding: 6% 15px;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -28,15 +29,13 @@
 
   .leaderboard-page__content::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    /* box-shadow: inset 0 0 6px rgba(0,0,0,.3); */
-    /* background-color: #00dfc4;
-    border: 1px solid #00dfc4; */
     background-color: transparent;
     border: none;
   }
 
 .leaderboard__mode {
     text-align: center;
+    margin-top: 15px;
 }
 
 .leaderboard__mode-select {
@@ -72,4 +71,10 @@
 .leaderboard-table__item p {
     font-size: 32px;
     line-height: 45px;
+}
+
+@media (max-width: 1115px) {
+    .leaderboard-page__content {
+        width: 60%;
+    }
 }

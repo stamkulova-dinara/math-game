@@ -189,3 +189,41 @@ input[type="radio"] {
         width: 0;
     }
 } */
+
+@media (max-width: 655px) {
+    .main__greetings{
+        font-size: 50px;
+        letter-spacing: 10px;
+    }
+}
+
+
+@media (max-width: 553px) {
+    .main__greetings{
+        font-size: 42px;
+        letter-spacing: 8px;
+    }
+}
+
+@media (max-width: 464px) {
+    .main__greetings{
+        font-size: 35px;
+        letter-spacing: 6px;
+    }
+    .main__question {
+        font-size: 20px;
+    }
+}
+@media (max-width: 387px) {
+    .main__greetings{
+        /* font-size: 30px; */
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 350px) {
+    .main__greetings{
+        font-size: 34px;
+        letter-spacing: 0;
+    }
+}

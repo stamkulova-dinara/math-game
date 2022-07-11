@@ -1,7 +1,8 @@
-const scoreEl = document.querySelector('.score'),
-      correctEl = document.querySelector('.correct'),
-      inCorrectEl = document.querySelector('.in-correct'),
-      playAgainBtn = document.querySelector('.play-again__btn')
+const scoreEl = document.querySelector('.score')
+const correctEl = document.querySelector('.correct')
+const inCorrectEl = document.querySelector('.in-correct')
+const playAgainBtn = document.querySelector('.play-again__btn')
+const levelEl = document.querySelector('.level')
 
 export function gameOver() {
     const localStorageData = JSON.parse(localStorage.getItem('currentUser')) 
@@ -9,6 +10,7 @@ export function gameOver() {
         scoreEl.textContent = localStorageData.score 
         correctEl.textContent = localStorageData.correct
         inCorrectEl.textContent = localStorageData.inCorrect 
+        levelEl.textContent = localStorageData.level
     }
 
         const users = JSON.parse(localStorage.getItem('gamer'))
@@ -23,6 +25,12 @@ export function gameOver() {
                 localStorage.setItem('gamer', JSON.stringify(users))
             }
         })
+        let userLevel = localStorageData.level
+
+        if(localStorageData.score > 2) {
+          localStorageData.level = userLevel+=1
+          localStorage.setItem('currentUser', JSON.stringify(localStorageData))
+        }
 
         function incEltNbr() {
                let endNbr = scoreEl? Number(scoreEl.innerHTML): null

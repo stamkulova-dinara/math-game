@@ -42,11 +42,11 @@ export const game = () => {
 
   const generateExample = () => {
     if (newQuizPlace) {
-      newQuizPlace.classList.add("animation");
-      setTimeout(() => {
-        newQuizPlace.classList.remove("animation");
-      }, 1000);
+      newQuizPlace.classList.add("animation-left");
     }
+    // setTimeout(() => {
+    //   newQuizPlace.classList.remove("animation-left");
+    // }, 800);
     let num1 = getRandom(1, 10);
     let num2 = getRandom(1, 10);
     const operator = operators[getRandom(0, 3)];
@@ -114,10 +114,10 @@ export const game = () => {
     if (e.key === "Enter") {
       e.preventDefault();
       go();
-      // newQuizPlace.classList.add('animation')
-      // setTimeout(() => {
-      //     newQuizPlace.classList.remove('animation')
-      // }, 1500);
+      newQuizPlace.classList.add('animation-right')
+      setTimeout(() => {
+        newQuizPlace.classList.remove('animation-right')
+      }, 800);
     }
   });
 };
@@ -176,5 +176,5 @@ function timerFunc() {
 }
 
 result?.addEventListener("mousewheel", function (e) {
-  document?.querySelector(e.target).blur();
+  document.querySelector(e.target).blur();
 });

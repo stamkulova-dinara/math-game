@@ -1,40 +1,52 @@
 .mode-game {
   /* background-color: #1d2b3a; */
   background-color: #354c64;
-  height: 100vh;
+  height: 650px;
   color: white;
-  padding: 60px 8% 0 8%;
+  padding: 60px 0 0 0;
 }
 
 .mode-game__header {
   display: flex;
   margin-bottom: 40px;
   justify-content: space-between;
+  padding: 0 8%;
 }
 .mode-game__level {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-left: 300px;
 }
-main {
+.mode-game__question-container {
+   width: 100%;
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+}
+.mode-game__question-place {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 100px 0;
-  animation: show 1s ease-in-out forwards;
-  animation: hide 1s ease-in-out forwards;
+  padding: 0 8%;
+  position: absolute;
+  width: 100%;
+}
+.animation-left {
+  animation: hide 0.5s ease-in-out forwards;
+}
+.animation-right {
+  animation: show 0.8s ease-in-out forwards;
 }
 
 main div {
   width: 100%;
   display: flex;
-  /* font-size: 5vw; */
   font-size: 66px;
 }
 main input {
   border: 2px solid #00dfc4;
   border-radius: 8px;
-  /* width: 14vw; */
   width: 200px;
   font-size: 5vw;
   padding: 2vw;
@@ -61,7 +73,6 @@ h3 {
 }
 
 .mode-game__time {
-  /* margin: 30px 0 50px 0; */
   display: none;
   width: 100%;
 }
@@ -221,18 +232,50 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-@media (max-width: 840px) {
-  /* .mobile {
-    display: block;
-  }
-  .desktop {
-    display: none;
-  } */
-}
-
 @media (max-width: 750px) {
   main input{
     width: 130px;
     height: 100px;
   }
+}
+@media (max-width: 510px) {
+ .mode-game__timer {
+  padding-top: 5px;
+  font-size: 17px;
+ }
+ .mode-game__user-name {
+  padding-top: 5px;
+  font-size: 18px;
+ }
+ .mode-game__btn {
+  width: 150px;
+  padding: 2px 0;
+ }
+ main {
+  margin-top: 100px;
+ }
+}
+@media (max-width: 385px) {
+  .mode-game__header {
+    margin-bottom: 25px;
+  }
+  .mode-game__user-name {
+    padding-top: 5px;
+    font-size: 16px;
+   }
+   .mode-game__btn {
+    width: 130px;
+    padding: 2px 0;
+   }
+}
+
+@media (max-width: 355px) {
+  .mode-game__user-name {
+    padding-top: 5px;
+    font-size: 14px;
+   }
+   .mode-game__btn {
+    width: 110px;
+    padding: 2px 0;
+   }
 }

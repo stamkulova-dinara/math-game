@@ -4,6 +4,8 @@ const gamerName = document.querySelector('#gamer_name'),
 export const gamerNameFunc = () => {
     const nameCheck = () => gamerName.value.length < 3 ? gamerName.classList.add('error') : gamerName.classList.remove('error') 
       gamerName?.addEventListener('input', () => nameCheck())
+      const user = JSON.parse(localStorage.getItem('currentUser'))
+      gamerName && user ? gamerName.value = user.name : null
 
     startBtn?.addEventListener('click', () => {
         nameCheck()
@@ -12,7 +14,8 @@ export const gamerNameFunc = () => {
         let info = {
             name: gamerName.value,
             mode: mode.value,
-            score: 0
+            score: 0,
+            level: 1
         }
         let gameInfo = JSON.parse(localStorage.getItem("gamer"));
 
@@ -32,11 +35,11 @@ export const gamerNameFunc = () => {
                 mode: mode.value,
                 score: 0,
                 correct: 0,
-                inCorrect: 0
+                inCorrect: 0,
+                level: 1
             }
             localStorage.setItem('currentUser', JSON.stringify(currentUser))
             window.location.href = `./mode-game.html?name=${info.name}&mode=${info.mode}`
-            gamerName.value = ''
     }
     })
 }

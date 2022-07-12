@@ -25,12 +25,6 @@ export function gameOver() {
                 localStorage.setItem('gamer', JSON.stringify(users))
             }
         })
-        let userLevel = localStorageData.level
-
-        if(localStorageData.score > 2) {
-          localStorageData.level = userLevel+=1
-          localStorage.setItem('currentUser', JSON.stringify(localStorageData))
-        }
 
         function incEltNbr() {
                let endNbr = scoreEl? Number(scoreEl.innerHTML): null

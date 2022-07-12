@@ -1,3 +1,5 @@
+import { timerFunc } from "./timer";
+
 const num1 = document.querySelector(".num-1");
 const num2 = document.querySelector(".num-2");
 const operator = document.querySelector(".operator");
@@ -5,11 +7,8 @@ const result = document.querySelector(".result");
 const winElement = document.querySelector(".win");
 const name = document.getElementById("user-name");
 const gameOverBtn = document.getElementById("game-over__btn");
-const progressEl = document.getElementById("progress");
-const progressBar = document.getElementById("progress-bar");
 const timeAttack = document.querySelector(".time");
 const newQuizPlace = document.querySelector(".mode-game__question-place");
-const demo = document.getElementById("time-demo");
 const scores = document.querySelector(".mode-game__scores");
 const plus = document.querySelector(".plus");
 const minus = document.querySelector('.minus')
@@ -19,13 +18,11 @@ let inCorrect = 0;
 const currentGamer = JSON.parse(localStorage.getItem("currentUser"));
 
 export const game = () => {
-  if (currentGamer.mode === "time-attack") {
-    timerFunc();
+  if (currentGamer && currentGamer.mode === "time-attack") {
+    timerFunc()
     timeAttack ? (timeAttack.style.display = "block") : null;
   }
-  {
     name ? (name.textContent = currentGamer.name) : null;
-  }
 
   const getRandom = (min, max) => {
     return Math.round(Math.random() * (max - min) + min);
@@ -44,9 +41,6 @@ export const game = () => {
     if (newQuizPlace) {
       newQuizPlace.classList.add("animation-left");
     }
-    // setTimeout(() => {
-    //   newQuizPlace.classList.remove("animation-left");
-    // }, 800);
     let num1 = getRandom(1, 10);
     let num2 = getRandom(1, 10);
     const operator = operators[getRandom(0, 3)];
@@ -122,7 +116,7 @@ export const game = () => {
   });
 };
 
-function newScoreSetInLocalStorage() {
+export function newScoreSetInLocalStorage() {
   currentGamer.correct = correct;
   currentGamer.inCorrect = inCorrect;
   localStorage.setItem("currentUser", JSON.stringify(currentGamer));
@@ -131,50 +125,4 @@ function newScoreSetInLocalStorage() {
 gameOverBtn?.addEventListener("click", () => {
   newScoreSetInLocalStorage();
   window.location.href = "./game-over.html";
-});
-const timer = () => {
-  var temp = window.t;
-  window.t = window.t - 1;
-  var m = Math.floor((temp % 3600) / 60);
-  var s = Math.floor(temp - m * 60);
-  m = checkTime(m);
-  s = checkTime(s);
-  {
-    progressBar
-      ? (progressBar.style.width = (temp * 100) / window.per + "%")
-      : null;
-  }
-
-  var t = setTimeout(timer, 1000);
-  demo ? (demo.textContent = m + ":" + s) : null;
-
-  if (temp < 9) {
-    {
-      progressBar ? (progressBar.style.backgroundColor = "red") : null;
-    }
-    {
-      progressEl ? (progressEl.style.borderColor = "red") : null;
-    }
-  }
-  if (temp == 0) {
-    clearInterval(t);
-    newScoreSetInLocalStorage();
-    window.location.href = "./game-over.html";
-  }
-};
-function checkTime(i) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  return i;
-}
-function timerFunc() {
-  let t = 0;
-  window.t = 0 * 3600 + 1.5 * 60;
-  window.per = window.t;
-  timer();
-}
-
-result?.addEventListener("mousewheel", function (e) {
-  document.querySelector(e.target).blur();
 });

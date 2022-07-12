@@ -8,15 +8,16 @@
     width: 100%;
     height: 100%; 
     overflow: auto; 
-    background-color: rgba(0,0,0,0.2); 
+    background-color: rgba(0,0,0,0.4); 
 }
 
 .modal-page__content {
-    background-color: #1d2b3a;
     margin: auto;
+    background-color: beige;
     padding: 30px 30px 70px 30px;
     max-width: 650px;
-    color: #fff;
+    color: #243446;
+    border-radius: 8px;
 }
 
 .rules__title {
@@ -25,16 +26,44 @@
 }
 
 .rules__list {
-    /* padding-left: 23px; */
     font-size: 20px;
-    /* padding: 0 15px; */
     margin: 0 20px
 }
 
 .rules__list li {
     margin-top: 20px;
+    font-weight: 500;
 }
 
 .modal-page__close:hover, #open-modal:hover {
     cursor: pointer;
+}
+@media screen and (max-width:632px) {
+    .modal-page__content {
+        padding: 15px 15px 50px 15px;
+    }
+}
+@media screen and (max-width:600px){
+    .modal-page{
+        padding: 11% 15px;
+    }
+    .rules__title {
+        font-size: 30px;
+    }
+    .rules__list li {
+        font-size: 16px;
+    }
+    .modal-page__close{
+        width: 20px;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .rules__title {
+        font-size: 26px;
+        padding-top: 5px;
+    }
+    .rules__list li {
+        font-size: 14px;
+    }
 }

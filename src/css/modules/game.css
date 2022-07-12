@@ -1,6 +1,5 @@
 .mode-game {
-  /* background-color: #1d2b3a; */
-  background-color: #354c64;
+  background-color: #1d2b3a;
   height: 650px;
   color: white;
   padding: 60px 0 0 0;
@@ -11,11 +10,6 @@
   margin-bottom: 40px;
   justify-content: space-between;
   padding: 0 8%;
-}
-.mode-game__level {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-left: 300px;
 }
 .mode-game__question-container {
    width: 100%;
@@ -28,7 +22,7 @@
   justify-content: center;
   align-items: center;
   margin: 100px 0;
-  padding: 0 8%;
+  padding: 0 15%;
   position: absolute;
   width: 100%;
 }
@@ -39,23 +33,21 @@
   animation: show 0.8s ease-in-out forwards;
 }
 
-main div {
+.mode-game__question-place div {
   width: 100%;
   display: flex;
   font-size: 66px;
+  font-weight: 600;
 }
 main input {
-  border: 2px solid #00dfc4;
+  border: 3px solid #00dfc4;
   border-radius: 8px;
   width: 200px;
-  font-size: 5vw;
+  font-size: 66px;
   padding: 2vw;
   color: white;
+  font-weight: 600;
   background: transparent;
-}
-h3 {
-  margin-top: 30px;
-  font-size: 26px;
 }
 
 #progress{
@@ -75,6 +67,7 @@ h3 {
 .mode-game__time {
   display: none;
   width: 100%;
+  padding: 0 8%;
 }
 
 .mode-game__box{
@@ -141,7 +134,7 @@ input[type=number]::-webkit-outer-spin-button {
   animation: plus 1s ease-in-out forwards;
   color: rgb(72, 255, 72);
   margin-left: 100px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
 }
 
@@ -151,11 +144,8 @@ input[type=number]::-webkit-outer-spin-button {
   animation: minus 1s ease-in-out forwards;
   color: rgb(255, 30, 30);
   margin-left: 100px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
-}
-.mobile {
-  display: none;
 }
 
 .visible {
@@ -164,15 +154,18 @@ input[type=number]::-webkit-outer-spin-button {
 .mode-game__info{
   display: flex;
 }
+.twitch {
+  animation: twitch 0.4s ease-in-out forwards;  
+}
 @keyframes plus {
   from {
     opacity: 0.2;
-    top: 30%;
+    top: 50%;
   }
 
   to {
     opacity: 1;
-    top: -70%;
+    top: -130%;
   }
 }
 
@@ -184,7 +177,7 @@ input[type=number]::-webkit-outer-spin-button {
 
   to {
     opacity: 1;
-    top: -70%;
+    top: -100%;
   }
 }
 
@@ -212,11 +205,21 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-@media (max-width: 1115px) {
-  .mode-game {
-    padding: 6% 5%;
-  }
+@keyframes twitch {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
 
+@media (max-width: 1115px) {
   main input {
     width: 160px;
     height: 130px;
@@ -226,16 +229,13 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-@media (max-width: 900px) {
-  main {
-    margin: 140px 0 100px 0;
-  }
-}
-
 @media (max-width: 750px) {
   main input{
     width: 130px;
     height: 100px;
+  }
+  .mode-game__question-place, .mode-game__header, .mode-game__time   {
+    padding: 0 6%;
   }
 }
 @media (max-width: 510px) {
@@ -251,7 +251,7 @@ input[type=number]::-webkit-outer-spin-button {
   width: 150px;
   padding: 2px 0;
  }
- main {
+ .mode-game__question-place {
   margin-top: 100px;
  }
 }
@@ -267,6 +267,9 @@ input[type=number]::-webkit-outer-spin-button {
     width: 130px;
     padding: 2px 0;
    }
+   .mode-game__question-place div {
+    font-size: 55px;
+   }
 }
 
 @media (max-width: 355px) {
@@ -278,4 +281,8 @@ input[type=number]::-webkit-outer-spin-button {
     width: 110px;
     padding: 2px 0;
    }
+   .mode-game__question-place input{
+    width: 100px;
+    height: 100px;
+  }
 }

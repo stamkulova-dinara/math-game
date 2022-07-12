@@ -15,11 +15,17 @@
 
 .main__question{
     font-weight: 400;
-    margin-bottom: 7px;
+    margin-bottom: 14px;
 }
 .input-box {
     position: relative;
     margin-bottom: 35px;
+}
+.name-error {
+    color: rgb(238, 38, 38);
+    position: absolute;
+    top: 275px;
+    font-size: 13px;
 }
 
 .main__name-inp {
@@ -59,9 +65,7 @@
     position: relative;
     font-size: 57px;
     letter-spacing: 12px;
-    /* color: #243446; */
     text-transform: uppercase;
-    /* -webkit-box-reflect: below 1px linear-gradient(transparent, #152b44); */
     line-height: 0.70em;
     outline: none;
 }
@@ -156,6 +160,9 @@ input[type="radio"] {
         font-size: 42px;
         letter-spacing: 8px;
     }
+    .name-error {
+        top: 265px;
+    }
 }
 
 @media (max-width: 464px) {
@@ -165,6 +172,9 @@ input[type="radio"] {
     }
     .main__question {
         font-size: 20px;
+    }
+    .name-error {
+        top: 250px;
     }
 }
 @media (max-width: 387px) {

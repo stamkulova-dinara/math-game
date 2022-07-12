@@ -83,6 +83,9 @@
     .leaderboard__title {
         font-size: 45px;
     }
+    .leaderboard-table__item p {
+        font-size: 28px;
+    }
 }
 
 @media (max-width: 570px) {
@@ -93,12 +96,15 @@
         font-size: 36px;
     }
     .leaderboard-table__item p {
-        font-size: 28px;
+        font-size: 24px;
     }
 }
 @media (max-width: 375px) {
     .leaderboard__title {
         font-size: 32px;
+    }
+    .leaderboard-table__item p {
+        font-size: 20px;
     }
 }
 

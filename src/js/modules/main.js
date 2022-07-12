@@ -1,8 +1,20 @@
-const gamerName = document.querySelector('#gamer_name'),
-      startBtn = document.querySelector('#start-btn')
+const gamerName = document.querySelector('#gamer_name')
+const startBtn = document.querySelector('#start-btn')
+const nameErr = document.querySelector('.name-error')
 
 export const gamerNameFunc = () => {
-    const nameCheck = () => gamerName.value.length < 3 ? gamerName.classList.add('error') : gamerName.classList.remove('error') 
+    const nameCheck = () => {
+        if(!gamerName.value.length) {
+            nameErr.textContent = 'required this field*'
+            gamerName.classList.add('error')
+        } else if (gamerName.value.length < 3) {
+            nameErr.textContent = 'length shoulbe be at least 3 characters*'
+            gamerName.classList.add('error')
+        } else {
+            nameErr.textContent = ''
+            gamerName.classList.remove('error')
+        }
+    }
       gamerName?.addEventListener('input', () => nameCheck())
       const user = JSON.parse(localStorage.getItem('currentUser'))
       gamerName && user ? gamerName.value = user.name : null

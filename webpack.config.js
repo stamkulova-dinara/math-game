@@ -1,7 +1,6 @@
 const path = require('path')
 const fs = require('fs');
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -49,7 +48,6 @@ module.exports = {
                 filename: `${page}`,
             })
         ),
-        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: "styles.css",
         }),
